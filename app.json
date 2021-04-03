@@ -1,0 +1,16 @@
+{
+    "id": "b99d9e90-9fd1-46a1-8516-cc6ad3347be6",
+    "version": "0.0.1",
+    "requiredApiVersion": "^1.19.0",
+    "iconFile": "icon.png",
+    "author": {
+        "name": "aditya-mitra",
+        "homepage": "aditya-mitra.github.io",
+        "support": "aaa"
+    },
+    "name": "groom",
+    "nameSlug": "groom",
+    "classFile": "GroomApp.ts",
+    "description": "groom the slash commands",
+    "implements": []
+}
