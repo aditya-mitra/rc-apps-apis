@@ -26,7 +26,10 @@ export class MentionsApp extends App implements IPreMessageSentModify {
     ): Promise<IMessage> {
         const mentions = message.text?.match(/\B@[a-z0-9_-]+/gi);
 
-        const buildingMessage = builder.setData(message).setText("gone");
+        const buildingMessage = builder
+            .setSender(message.sender)
+            .setRoom(message.room);
+
         if (mentions && mentions.length > 0) {
             console.log("found mentions - ", mentions);
             const r =
