@@ -1,16 +1,15 @@
 {
-    "id": "5f6a4fff-35e3-407a-b849-1e108d110dbb",
+    "id": "18505ea2-d67a-424e-bd19-f2ebd62ea189",
     "version": "0.0.1",
-    "requiredApiVersion": "^1.19.0",
+    "requiredApiVersion": "^1.4.0",
     "iconFile": "icon.png",
     "author": {
         "name": "aditya-mitra",
         "homepage": "aditya-mitra.github.io",
         "support": "aditya-mitra.github.io"
     },
-    "name": "first-rc-app",
-    "nameSlug": "first-rc-app",
-    "classFile": "FirstRcAppApp.ts",
-    "description": "First RocketChat app created using the Rocket.Chat Apps-Engine",
-    "implements": []
+    "name": "slashcommander",
+    "nameSlug": "slashcommander",
+    "classFile": "SlashcommanderApp.ts",
+    "description": "Print multiple slash commands arguments"
 }
