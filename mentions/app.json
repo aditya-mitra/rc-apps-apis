@@ -1,0 +1,15 @@
+{
+    "id": "5324faaa-5b16-4113-a7e2-28beedfcafe4",
+    "version": "0.0.1",
+    "requiredApiVersion": "^1.4.0",
+    "iconFile": "icon.png",
+    "author": {
+        "name": "aditya-mitra",
+        "homepage": "aditya-mitra.github.io",
+        "support": "aditya-mitra.github.io"
+    },
+    "name": "mentions",
+    "nameSlug": "mentions",
+    "classFile": "MentionsApp.ts",
+    "description": "invite mention for private rooms"
+}

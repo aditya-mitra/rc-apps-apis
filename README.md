@@ -1,42 +1,22 @@
-## Installing the CLI
+# mentions
+invite mention for private rooms
 
-```
-npm install -g @rocket.chat/apps-cli
-```
+## Getting Started
+Now that you have generated a blank default Rocket.Chat App, what are you supposed to do next?
+Start developing! Open up your favorite editor, our recommended one is Visual Studio code,
+and start working on your App. Once you have something ready to test, you can either
+package it up and manually deploy it to your test instance or you can use the CLI to do so.
+Here are some commands to get started:
+- `rc-apps package`: this command will generate a packaged app file (zip) which can be installed **if** it compiles with TypeScript
+- `rc-apps deploy`: this will do what `package` does but will then ask you for your server url, username, and password to deploy it for you
 
-## Adding AutoComplete for the CLI
-
-```
-printf "$(rc-apps autocomplete:script bash)" >> ~/.bashrc; source ~/.bashrc
-```
-
-This will add the autocomplete of the rc-apps CLI which can be done using <kbd>tab</kbd>
-
-## Bootstraping
-
-```
-rc-apps create
-```
-
-This will ask the questions and create a new folder with the _app name_.
-
-## Configuring the Server
-
-_Go to_ Adminstration > General > Apps > Enable development mode
-
-## Deploying
-
-```
-rc-apps deploy --url http://localhost:3000 --username kame --password kame
-```
-
-## Uninstalling From Server
-
-_Go to_ Adminstration > Apps > Hover over the app > Click the hamburger icon > Click uninstall
-
-# Encountered Problems
-
-**_Keep these in mind_**
-
-1. A _`command class`_ imported from `commands/index.ts` will not register a command.
-   You need to keep it in its own file - `commands/nameofcommand.ts`.
+## Documentation
+Here are some links to examples and documentation:
+- [Rocket.Chat Apps TypeScript Definitions Documentation](https://rocketchat.github.io/Rocket.Chat.Apps-engine/)
+- [Rocket.Chat Apps TypeScript Definitions Repository](https://github.com/RocketChat/Rocket.Chat.Apps-engine)
+- [Example Rocket.Chat Apps](https://github.com/graywolf336/RocketChatApps)
+- Community Forums
+  - [App Requests](https://forums.rocket.chat/c/rocket-chat-apps/requests)
+  - [App Guides](https://forums.rocket.chat/c/rocket-chat-apps/guides)
+  - [Top View of Both Categories](https://forums.rocket.chat/c/rocket-chat-apps)
+- [#rocketchat-apps on Open.Rocket.Chat](https://open.rocket.chat/channel/rocketchat-apps)
