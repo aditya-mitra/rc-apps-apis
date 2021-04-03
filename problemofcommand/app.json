@@ -1,0 +1,16 @@
+{
+    "id": "9c4e2f08-0f45-4fef-be07-74962bad224b",
+    "version": "0.0.1",
+    "requiredApiVersion": "^1.19.0",
+    "iconFile": "icon.png",
+    "author": {
+        "name": "asd",
+        "homepage": "adaf",
+        "support": "g"
+    },
+    "name": "problemofcommand",
+    "nameSlug": "problemofcommand",
+    "classFile": "ProblemofcommandApp.ts",
+    "description": "ghr",
+    "implements": []
+}
