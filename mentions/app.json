@@ -1,7 +1,7 @@
 {
-    "id": "mentions-in-private",
+    "id": "5324faaa-5b16-4113-a7e2-28beedfcafe4",
     "version": "0.0.1",
-    "requiredApiVersion": "^1.4.0",
+    "requiredApiVersion": "^1.19.0",
     "iconFile": "icon.jpg",
     "author": {
         "name": "aditya-mitra",
@@ -11,5 +11,13 @@
     "name": "mentions",
     "nameSlug": "mentions",
     "classFile": "MentionsApp.ts",
-    "description": "invite mention for private rooms"
+    "description": "invite mention for private rooms",
+    "implements": [
+        "IPreMessageSentModify"
+    ],
+    "permissions": [
+        {
+            "name": "message.write"
+        }
+    ]
 }
