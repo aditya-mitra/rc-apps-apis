@@ -1,7 +1,7 @@
 {
     "id": "8cf55453-fcb9-467b-8d5f-2b4db595dec3",
     "version": "0.0.1",
-    "requiredApiVersion": "^1.4.0",
+    "requiredApiVersion": "^1.19.0",
     "iconFile": "icon.png",
     "author": {
         "name": "aditya-mitra",
@@ -11,5 +11,6 @@
     "name": "memoizer",
     "nameSlug": "memoizer",
     "classFile": "MemoizerApp.ts",
-    "description": "an app to keep notes"
+    "description": "an app to keep notes",
+    "implements": []
 }
