@@ -2,11 +2,7 @@ import {
     IModify,
     IPersistence,
 } from "@rocket.chat/apps-engine/definition/accessors";
-import {
-    RocketChatAssociationModel,
-    RocketChatAssociationRecord,
-} from "@rocket.chat/apps-engine/definition/metadata";
-import { BlockElementType } from "@rocket.chat/apps-engine/definition/uikit";
+import { IRoom } from "@rocket.chat/apps-engine/definition/rooms";
 import { IUIKitModalViewParam } from "@rocket.chat/apps-engine/definition/uikit/UIKitInteractionResponder";
 import { IUser } from "@rocket.chat/apps-engine/definition/users";
 
@@ -26,22 +22,24 @@ export default async function createMemoNewModal({
 
     const block = modify.getCreator().getBlockBuilder();
 
-    block.addDividerBlock().addContextBlock({
-        blockId: "some_context",
-        elements: [
-            {
-                type: BlockElementType.IMAGE,
-                imageUrl: "https://source.unsplash.com/random",
-                altText: "unsplash image",
-            },
-        ],
+    block.addDividerBlock();
+
+    block.addInputBlock({
+        blockId: "heading_block",
+        element: block.newPlainTextInputElement({
+            placeholder: block.newPlainTextObject("Write a note to yourself!"),
+            multiline: true,
+        }),
+        label: block.newPlainTextObject("Note"),
     });
+
+    block.addDividerBlock();
 
     return {
         id: viewID,
         title: block.newPlainTextObject("Create a new Memo for this room"),
         submit: block.newButtonElement({
-            text: block.newPlainTextObject("Submit"),
+            text: block.newPlainTextObject("Save"),
         }),
         blocks: block.getBlocks(),
     };
@@ -56,12 +54,11 @@ interface ICreateNewMemoModal {
      * get the user using `ctx.getSender()`
      */
     user: IUser;
+    room: IRoom;
 }
 
 /*
 <img> SAVE YOUR NOTES
----------------------------------------
-<input give your note a topic>
 ---------------------------------------
 <input give your note a description>
 ---------------------------------------

@@ -42,6 +42,7 @@ export class MemoSlashCommand implements ISlashCommand {
                         modify,
                         perist,
                         user: ctx.getSender(),
+                        room: ctx.getRoom(),
                     });
                     await modify
                         .getUiController()
