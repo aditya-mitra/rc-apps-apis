@@ -40,3 +40,13 @@ _Go to_ Adminstration > Apps > Hover over the app > Click the hamburger icon > C
 
 1. A _`command class`_ imported from `commands/index.ts` will not register a command.
    You need to keep it in its own file - `commands/nameofcommand.ts`.
+
+2. While creating a new message using the _`IMessageBuilder`_, it is required to explicitly mention the **room** and the **user**. Otherwise, we would get the same message in methods like `executePreMessageSentModify`.
+
+```ts
+builder
+  .setSender(message.sender)
+  .setRoom(message.room)
+  .setText("my changed message")
+  .getMessage();
+```
