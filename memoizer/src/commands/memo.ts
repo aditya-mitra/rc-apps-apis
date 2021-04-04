@@ -8,6 +8,7 @@ import {
     ISlashCommand,
     SlashCommandContext,
 } from "@rocket.chat/apps-engine/definition/slashcommands";
+import createMemoNewModal from "../helpers/createMemoNewModal";
 import sendMessageToUser from "../helpers/sendMessageToUser";
 
 export class MemoSlashCommand implements ISlashCommand {
@@ -21,9 +22,12 @@ export class MemoSlashCommand implements ISlashCommand {
         read: IRead,
         modify: IModify,
         http: IHttp,
-        peris: IPersistence
+        perist: IPersistence
     ): Promise<void> {
         const args = ctx.getArguments();
+
+        const triggerId = ctx.getTriggerId();
+
         if (args.length !== 1) {
             return sendMessageToUser({
                 msg: "Provide only *1* argument",
@@ -33,6 +37,18 @@ export class MemoSlashCommand implements ISlashCommand {
         }
         switch (args[0]) {
             case "new":
+                if (triggerId) {
+                    const modal = await createMemoNewModal({
+                        modify,
+                        perist,
+                        user: ctx.getSender(),
+                    });
+                    await modify
+                        .getUiController()
+                        .openModalView(modal, { triggerId }, ctx.getSender());
+                }
+
+                break;
             case "show":
                 return;
             default:
