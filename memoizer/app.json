@@ -12,5 +12,7 @@
     "nameSlug": "memoizer",
     "classFile": "MemoizerApp.ts",
     "description": "an app to keep notes",
-    "implements": []
+    "implements": [
+        "IUIKitInteractionHandler"
+    ]
 }

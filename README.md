@@ -34,6 +34,14 @@ rc-apps deploy --url http://localhost:3000 --username kame --password kame
 
 _Go to_ Adminstration > Apps > Hover over the app > Click the hamburger icon > Click uninstall
 
+# Notes
+
+#### For getting the data stored in the Rocket.Chat instance
+
+To **read** the data (such as _getting a room by id_, _getting a user by username_), the **`IRead`** interface provides the methods for doing so.
+
+https://rocketchat.github.io/Rocket.Chat.Apps-engine/interfaces/accessors_iread.iread.html
+
 # Encountered Problems
 
 **_Keep these in mind_**

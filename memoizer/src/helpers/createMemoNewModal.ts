@@ -29,6 +29,7 @@ export default async function createMemoNewModal({
         element: block.newPlainTextInputElement({
             placeholder: block.newPlainTextObject("Write a note to yourself!"),
             multiline: true,
+            actionId: "text_input", // add this otherwise will be getting a random uuid
         }),
         label: block.newPlainTextObject("Note"),
     });
