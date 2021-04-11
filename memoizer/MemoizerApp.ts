@@ -32,11 +32,36 @@ export class MemoizerApp extends App implements IUIKitInteractionHandler {
         http: IHttp,
         persist: IPersistence,
         modify: IModify
-    ): Promise<IUIKitResponse> {
+    ) {
         const data = ctx.getInteractionData();
+        const state = data.view.state as ICreateNewMemoModalState;
 
-        console.log(data.view.state, "was the data");
+        if (!state || state.heading_block.text_input.length === 0) {
+            return ctx.getInteractionResponder().viewErrorResponse({
+                viewId: data.view.id,
+                errors: {
+                    // the field where you want to show the error. for ex - the text_input field
+                    text_input: "memo cannot be blank",
+                },
+            });
+        }
+
+        // it is not possible to get the sender and the room in this context
+        const b = modify
+            .getCreator()
+            .startMessage()
+            .setText(state.heading_block.text_input)
+            .setRoom({ id: "Kch7Kgm9sFzKHzAfo" } as any)
+            .getMessage();
+
+        modify.getNotifier().notifyUser({ id: "MnNsMqdBQJ4qs7c2L" } as any, b);
 
         return { success: true };
     }
+}
+
+interface ICreateNewMemoModalState {
+    heading_block: {
+        text_input: string;
+    };
 }
