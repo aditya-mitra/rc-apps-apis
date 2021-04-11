@@ -1,0 +1,15 @@
+{
+    "id": "b4cb454f-8393-4f32-9f72-d1a7115d3364",
+    "version": "0.0.1",
+    "requiredApiVersion": "^1.4.0",
+    "iconFile": "icon.png",
+    "author": {
+        "name": "aditya-mitra",
+        "homepage": "aditya-mitra.github.io",
+        "support": "aditya-mitra.github.io"
+    },
+    "name": "uploader",
+    "nameSlug": "uploader",
+    "classFile": "UploaderApp.ts",
+    "description": "upload something from unsplash images as buffer"
+}
