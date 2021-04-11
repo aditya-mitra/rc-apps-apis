@@ -18,6 +18,9 @@
     "permissions": [
         {
             "name": "message.write"
+        },
+        {
+            "name": "networking"
         }
     ]
 }
